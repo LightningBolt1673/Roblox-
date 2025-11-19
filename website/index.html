@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Roblox- — Example Project</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <meta name="description" content="Roblox- example project: Rojo scaffold, server & client scripts, coin spawner and plugin." />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>Roblox-</h1>
+      <p class="tag">A small Roblox project scaffold with Rojo support, example scripts, and a plugin stub.</p>
+      <p class="actions"><a class="btn" href="#features">Explore features</a> <a class="btn ghost" href="#usage">Get started</a></p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="features" class="card">
+      <h2>Included</h2>
+      <ul>
+        <li>Rojo mapping: <code>default.project.json</code></li>
+        <li>Server scripts: leaderstats, coin spawner</li>
+        <li>Client scripts: welcome GUI, leaderboard UI</li>
+        <li>Studio plugin stub: <code>plugin/hello.plugin.lua</code></li>
+        <li>Pasteable snippets in <code>snippets/</code></li>
+      </ul>
+    </section>
+
+    <section id="usage" class="card">
+      <h2>How to run locally</h2>
+      <p>Recommended: use Rojo to manage code and sync with Roblox Studio.</p>
+      <ol>
+        <li>Install Rojo: <code>npm install -g @rojo/core</code> (or follow Rojo docs).</li>
+        <li>Build a `.rbxlx` from the project root: <code>rojo build -o RobloxProject.rbxlx</code></li>
+        <li>Open the produced `RobloxProject.rbxlx` in Roblox Studio, or run <code>rojo serve</code> and use the Rojo Studio plugin for live sync.</li>
+      </ol>
+
+      <h3>Quick paste</h3>
+      <p>If you prefer not to use Rojo, copy the scripts from <code>snippets/</code> into Studio:</p>
+      <ul>
+        <li>Server: paste into <code>ServerScriptService</code></li>
+        <li>Client: paste into <code>StarterPlayer &gt; StarterPlayerScripts</code></li>
+      </ul>
+    </section>
+
+    <section id="deploy" class="card">
+      <h2>Deployment</h2>
+      <p>This repository includes a GitHub Actions workflow to publish the static site to the <code>gh-pages</code> branch. Enable GitHub Pages in the repository settings (source: <code>gh-pages</code> branch) after the workflow runs.</p>
+      <p class="muted">PR: <a href="https://github.com/LightningBolt1673/Roblox-/pull/1">Open PR (feature/all)</a></p>
+    </section>
+
+    <section id="contact" class="card small">
+      <h2>Next steps</h2>
+      <ul>
+        <li>Add gameplay assets (sprites, meshes, sounds)</li>
+        <li>Package and publish the Studio plugin</li>
+        <li>Expand documentation and examples</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">Built from the <code>feature/all</code> branch — LightningBolt1673</div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
