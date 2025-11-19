@@ -16,6 +16,24 @@ local function spawnCoin()
     coin.CanCollide = false
     coin.Parent = coinFolder
 
+    -- Add a small particle effect to make coins visible and a placeholder sound
+    local particle = Instance.new("ParticleEmitter")
+    particle.Name = "CoinTrail"
+    particle.Color = ColorSequence.new(Color3.fromRGB(255, 215, 0))
+    particle.LightEmission = 0.7
+    particle.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 0.6), NumberSequenceKeypoint.new(1, 0)})
+    particle.Rate = 20
+    particle.Lifetime = NumberRange.new(0.4, 0.8)
+    particle.Speed = NumberRange.new(0, 1)
+    particle.Parent = coin
+
+    local pickupSound = Instance.new("Sound")
+    pickupSound.Name = "PickupSound"
+    -- Replace SoundId with your preferred asset id, for example: "rbxassetid://18435260"
+    pickupSound.SoundId = ""
+    pickupSound.Volume = 1
+    pickupSound.Parent = coin
+
     local touchedConn
     touchedConn = coin.Touched:Connect(function(hit)
         local character = hit.Parent
@@ -28,6 +46,17 @@ local function spawnCoin()
                     points.Value = points.Value + 1
                 end
             end
+
+            -- Play pickup sound if set
+            if pickupSound and pickupSound.SoundId ~= "" then
+                pickupSound:Play()
+            end
+
+            -- Emit a quick burst of particles at the moment of pickup
+            if particle then
+                particle:Emit(25)
+            end
+
             if touchedConn then
                 touchedConn:Disconnect()
             end
